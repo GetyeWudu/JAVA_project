@@ -1,0 +1,63 @@
+/* === Root Layout === */
+#rootPane {
+    -fx-background-color: #f5f6fa;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* === Top Bar === */
+.top-bar {
+    -fx-background-color: #2f3640;
+    -fx-padding: 15 20;
+    -fx-alignment: center-left;
+}
+
+.welcome-label {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.logout-button {
+    -fx-background-color: #e84118;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+}
+
+.logout-button:hover {
+    -fx-background-color: #ff5e41;
+}
+
+/* === Sidebar Menu === */
+.side-menu {
+    -fx-background-color: #353b48;
+    -fx-padding: 20;
+    -fx-spacing: 10;
+}
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-pref-width: 180;
+    -fx-alignment: center-left;
+    -fx-padding: 8 12;
+    -fx-background-radius: 5;
+}
+
+.menu-button:hover {
+    -fx-background-color: #40739e;
+}
+
+.menu-button:focused {
+    -fx-background-color: #273c75;
+}
+
+/* === Content Pane === */
+.content-pane {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20;
+    -fx-border-color: #dcdde1;
+    -fx-border-width: 1 0 0 0;
+}

@@ -1,0 +1,80 @@
+/* General background */
+.login-pane {
+    -fx-background-color: linear-gradient(to bottom right, #f4f6f9, #dbe4f3);
+    -fx-padding: 30;
+}
+
+/* Main box */
+.login-box {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 15;
+    -fx-padding: 30;
+    -fx-alignment: center;
+    -fx-spacing: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.3, 0, 3);
+}
+
+/* Title */
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2b3a67;
+}
+
+/* Labels */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
+
+/* Input fields */
+.form-field {
+    -fx-pref-width: 220;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #c7c7c7;
+    -fx-border-width: 1;
+    -fx-padding: 6 8 6 8;
+    -fx-font-size: 13px;
+}
+
+.form-field:focused {
+    -fx-border-color: #4a90e2;
+    -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.2), 6, 0.2, 0, 1);
+}
+
+/* Login Button */
+.login-button {
+    -fx-background-color: linear-gradient(to right, #4a90e2, #3b6db1);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.3), 8, 0.3, 0, 2);
+}
+
+.login-button:hover {
+    -fx-background-color: linear-gradient(to right, #5aa1f0, #4a90e2);
+}
+
+/* Register Link */
+.register-link {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4a90e2;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+.register-link:hover {
+    -fx-text-fill: #2b3a67;
+}
+
+/* Status Label (for errors or success) */
+.status-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #d9534f;
+    -fx-font-weight: bold;
+}

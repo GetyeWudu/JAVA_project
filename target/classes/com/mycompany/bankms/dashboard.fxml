@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="dashboardRoot" alignment="TOP_CENTER" prefHeight="500" prefWidth="700" spacing="20" styleClass="dashboard-root" stylesheets="@../../../css/dashboard.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bankms.DashboardController">
+
+    <!-- 🧾 Title -->
+    <Label fx:id="dashboardTitle" styleClass="dashboard-title" text="Account Dashboard" />
+
+    <!-- 👤 Account Info Section -->
+    <GridPane fx:id="infoGrid" hgap="15" styleClass="info-grid" vgap="10">
+        <Label styleClass="info-label" text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="nameLabel" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label styleClass="info-label" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label fx:id="emailLabel" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label styleClass="info-label" text="Account Type:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label fx:id="accountTypeLabel" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label styleClass="info-label" text="Current Balance:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label fx:id="balanceLabel" styleClass="balance-label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <!-- 📊 Recent Transactions -->
+    <Label styleClass="section-title" text="Recent Transactions:" />
+
+    <TableView fx:id="transactionTable" prefHeight="220" styleClass="transaction-table">
+        <columns>
+            <TableColumn fx:id="dateColumn" prefWidth="130" text="Date" />
+            <TableColumn fx:id="typeColumn" prefWidth="110" text="Type" />
+            <TableColumn fx:id="amountColumn" prefWidth="110" text="Amount" />
+            <TableColumn fx:id="descColumn" prefWidth="210" text="Description" />
+        </columns>
+    </TableView>
+
+</VBox>

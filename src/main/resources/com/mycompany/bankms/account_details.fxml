@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="accountDetailsRoot" alignment="TOP_CENTER" prefHeight="500" prefWidth="700" spacing="20" styleClass="account-root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bankms.AccountDetailsController">
+
+    <!-- 🧾 Title -->
+    <Label fx:id="titleLabel" styleClass="account-title" text="Account Details" />
+
+    <!-- 🧍 Account Info Grid -->
+    <GridPane fx:id="infoGrid" hgap="15" styleClass="info-grid" vgap="12">
+        <Label styleClass="info-label" text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="nameLabel" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label styleClass="info-label" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label fx:id="emailLabel" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label styleClass="info-label" text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label fx:id="phoneLabel" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label styleClass="info-label" text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label fx:id="addressLabel" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label styleClass="info-label" text="National ID:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Label fx:id="nationalIdLabel" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+        <Label styleClass="info-label" text="Date of Birth:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <Label fx:id="dobLabel" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+        <Label styleClass="info-label" text="Account Type:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <Label fx:id="accountTypeLabel" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+        <Label styleClass="info-label" text="Current Balance:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+        <Label fx:id="balanceLabel" styleClass="balance-label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+   <stylesheets>
+      <URL value="@accountdetails.css" />
+      <URL value="@../../../css/accountdetails.css" />
+   </stylesheets>
+
+</VBox>

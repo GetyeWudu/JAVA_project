@@ -1,0 +1,68 @@
+/* === Root Layout === */
+.dashboard-root {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 30;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* === Title === */
+.dashboard-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2f3640;
+    -fx-underline: true;
+}
+
+/* === Info Grid === */
+.info-grid {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15;
+    -fx-border-color: #dcdde1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);
+}
+
+.info-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #353b48;
+}
+
+.info-value {
+    -fx-text-fill: #718093;
+}
+
+.balance-label {
+    -fx-text-fill: #009432;
+    -fx-font-weight: bold;
+}
+
+/* === Section Title === */
+.section-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2f3640;
+    -fx-font-size: 16px;
+}
+
+/* === Table Styling === */
+.transaction-table {
+    -fx-background-color: white;
+    -fx-border-color: #dcdde1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.transaction-table .column-header {
+    -fx-background-color: #40739e;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.transaction-table .table-row-cell:filled:selected {
+    -fx-background-color: #273c75;
+    -fx-text-fill: white;
+}
+
+.transaction-table .table-row-cell:hover {
+    -fx-background-color: #dcdde1;
+}

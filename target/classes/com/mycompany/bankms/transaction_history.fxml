@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="transactionHistoryRoot" alignment="TOP_CENTER" prefHeight="500" prefWidth="750" spacing="20" styleClass="transaction-root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bankms.TransactionHistoryController">
+
+    <!-- 🧾 Title -->
+    <Label fx:id="titleLabel" styleClass="transaction-title" text="Transaction History" />
+
+    <!-- 📋 Transactions Table -->
+    <TableView fx:id="transactionTable" prefHeight="420" styleClass="transaction-table">
+        <columns>
+            <TableColumn fx:id="dateColumn" prefWidth="140" text="Date" />
+            <TableColumn fx:id="typeColumn" prefWidth="120" text="Type" />
+            <TableColumn fx:id="amountColumn" prefWidth="120" text="Amount" />
+            <TableColumn fx:id="descColumn" prefWidth="250" text="Description" />
+        </columns>
+    </TableView>
+   <stylesheets>
+      <URL value="@transactionhistory.css" />
+      <URL value="@../../../css/transactionhistory.css" />
+   </stylesheets>
+
+</VBox>

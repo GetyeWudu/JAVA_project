@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.bankms.UpdateProfileController"
+      spacing="15" alignment="CENTER">
+
+    <Label text="Update Profile" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <TextField fx:id="phoneField" promptText="New Phone Number" />
+    <TextField fx:id="addressField" promptText="New Address" />
+
+    <Button text="Update" onAction="#handleUpdate" />
+    <Label fx:id="statusLabel" textFill="green" />
+</VBox>
