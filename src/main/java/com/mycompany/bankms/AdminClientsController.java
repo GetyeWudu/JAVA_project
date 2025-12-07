@@ -18,7 +18,6 @@ public class AdminClientsController {
     @FXML private TextArea addressArea;
     
     @FXML private TextField usernameField;
-    @FXML private PasswordField passwordField;
     
     @FXML private ComboBox<String> accountTypeBox;
     @FXML private TextField initialDepositField;
@@ -180,7 +179,6 @@ public class AdminClientsController {
         phoneField.clear();
         addressArea.clear();
         usernameField.clear();
-        passwordField.clear();
         initialDepositField.clear();
     }
 }

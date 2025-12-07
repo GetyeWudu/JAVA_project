@@ -14,7 +14,6 @@ public class RegisterController {
     @FXML private TextField firstNameField;
     @FXML private TextField lastNameField;
     @FXML private TextField usernameField;
-    @FXML private PasswordField passwordField;
     @FXML private TextField emailField;
     @FXML private TextField phoneField;
     @FXML private TextField addressField;
