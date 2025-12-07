@@ -61,11 +61,11 @@ public class LoanController {
 
             // Rule 2: Max Limits based on Loan Type
             if (type.equals("Personal Loan") && amount > 10000) {
-                showError("Personal loans are capped at $10,000.");
+                showError("Personal loans are capped at ETB 10,000.");
                 return;
             }
             if (type.equals("Car Loan") && amount > 50000) {
-                showError("Car loans are capped at $50,000.");
+                showError("Car loans are capped at ETB 50,000.");
                 return;
             }
 
@@ -118,7 +118,7 @@ public class LoanController {
             while (rs.next()) {
                 ObservableList<String> row = FXCollections.observableArrayList();
                 row.add(String.valueOf(rs.getInt("loan_id")));
-                row.add(String.format("$ %.2f", rs.getDouble("amount")));
+                row.add(String.format("ETB %.2f", rs.getDouble("amount")));
                 row.add(rs.getString("loan_type"));
                 
                 String status = rs.getString("status");

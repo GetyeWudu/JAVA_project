@@ -48,12 +48,12 @@ public class AdminClientsController {
         String email = emailField.getText().trim();
         String address = addressArea.getText().trim();
         String user = usernameField.getText().trim();
-        String pass = passwordField.getText().trim();
+        String pass = "Nigus@123"; // Default password for new clients
         String type = accountTypeBox.getValue();
         String depositStr = initialDepositField.getText().trim();
         String phone = phoneField.getText().trim();
 
-        if (fName.isEmpty() || lName.isEmpty() || user.isEmpty() || pass.isEmpty()) {
+        if (fName.isEmpty() || lName.isEmpty() || user.isEmpty()) {
             statusLabel.setStyle("-fx-text-fill: red;");
             statusLabel.setText("Please fill all required fields.");
             return;
