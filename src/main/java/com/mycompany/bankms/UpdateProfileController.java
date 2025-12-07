@@ -10,6 +10,12 @@ public class UpdateProfileController {
     @FXML private TextField phoneField;
     @FXML private TextArea addressField;
     @FXML private Label statusLabel;
+    
+    // Password change fields
+    @FXML private PasswordField currentPasswordField;
+    @FXML private PasswordField newPasswordField;
+    @FXML private PasswordField confirmPasswordField;
+    @FXML private Label passwordStatusLabel;
 
     private int userId;
 
@@ -50,6 +56,58 @@ public class UpdateProfileController {
             }
         } catch (SQLException e) {
             statusLabel.setText("Error: " + e.getMessage());
+        }
+    }
+    
+    @FXML
+    private void handleChangePassword() {
+        String currentPass = currentPasswordField.getText().trim();
+        String newPass = newPasswordField.getText().trim();
+        String confirmPass = confirmPasswordField.getText().trim();
+
+        if (currentPass.isEmpty() || newPass.isEmpty() || confirmPass.isEmpty()) {
+            passwordStatusLabel.setStyle("-fx-text-fill: red;");
+            passwordStatusLabel.setText("All password fields are required.");
+            return;
+        }
+
+        if (!newPass.equals(confirmPass)) {
+            passwordStatusLabel.setStyle("-fx-text-fill: red;");
+            passwordStatusLabel.setText("New passwords do not match.");
+            return;
+        }
+
+        String checkSql = "SELECT password_hash FROM users WHERE user_id = ?";
+        String updateSql = "UPDATE users SET password_hash = ? WHERE user_id = ?";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
+
+            checkStmt.setInt(1, userId);
+            ResultSet rs = checkStmt.executeQuery();
+
+            if (rs.next() && rs.getString("password_hash").equals(currentPass)) {
+                try (PreparedStatement updateStmt = conn.prepareStatement(updateSql)) {
+                    updateStmt.setString(1, newPass);
+                    updateStmt.setInt(2, userId);
+                    updateStmt.executeUpdate();
+                    
+                    passwordStatusLabel.setStyle("-fx-text-fill: green;");
+                    passwordStatusLabel.setText("Password changed successfully!");
+                    
+                    // Clear fields
+                    currentPasswordField.clear();
+                    newPasswordField.clear();
+                    confirmPasswordField.clear();
+                }
+            } else {
+                passwordStatusLabel.setStyle("-fx-text-fill: red;");
+                passwordStatusLabel.setText("Current password is incorrect.");
+            }
+
+        } catch (SQLException e) {
+            passwordStatusLabel.setStyle("-fx-text-fill: red;");
+            passwordStatusLabel.setText("Error: " + e.getMessage());
         }
     }
 }

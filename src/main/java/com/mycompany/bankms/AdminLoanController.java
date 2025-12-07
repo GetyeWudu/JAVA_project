@@ -51,7 +51,7 @@ public class AdminLoanController {
                 ObservableList<String> row = FXCollections.observableArrayList();
                 row.add(String.valueOf(rs.getInt("loan_id")));
                 row.add(rs.getString("username"));
-                row.add(String.format("$ %.2f", rs.getDouble("amount")));
+                row.add(String.format("ETB %.2f", rs.getDouble("amount")));
                 row.add(rs.getString("loan_type"));
                 row.add(rs.getString("status"));
                 row.add(String.valueOf(rs.getTimestamp("request_date")));
@@ -91,8 +91,8 @@ public class AdminLoanController {
         String loanId = selectedItem.get(0);
         String currentStatus = selectedItem.get(4);
         
-        // Parse amount removing "$ "
-        double amount = Double.parseDouble(selectedItem.get(2).replace("$ ", "").replace(",", ""));
+        // Parse amount removing "ETB "
+        double amount = Double.parseDouble(selectedItem.get(2).replace("ETB ", "").replace(",", ""));
 
         if (!currentStatus.equalsIgnoreCase("Pending")) {
             actionStatusLabel.setStyle("-fx-text-fill: orange;");

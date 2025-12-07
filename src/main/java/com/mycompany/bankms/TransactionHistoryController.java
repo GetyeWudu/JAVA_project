@@ -40,7 +40,7 @@ public class TransactionHistoryController {
                 ObservableList<String> row = FXCollections.observableArrayList();
                 row.add(String.valueOf(rs.getTimestamp("date")));
                 row.add(rs.getString("transaction_type"));
-                row.add(String.format("$ %.2f", rs.getDouble("amount")));
+                row.add(String.format("ETB %.2f", rs.getDouble("amount")));
                 row.add(rs.getString("description"));
                 data.add(row);
             }

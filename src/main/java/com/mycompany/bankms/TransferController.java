@@ -27,7 +27,7 @@ public class TransferController {
         this.currentBalance = currentBalance;
         
         if (accountNumberLabel != null) accountNumberLabel.setText(accountNumber);
-        if (balanceLabel != null) balanceLabel.setText(String.format("$ %.2f", currentBalance));
+        if (balanceLabel != null) balanceLabel.setText(String.format("ETB %.2f", currentBalance));
     }
 
     @FXML
