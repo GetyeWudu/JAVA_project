@@ -41,11 +41,12 @@ public class RegisterController {
             conn = DBConnection.getConnection();
             conn.setAutoCommit(false); // Start Transaction
 
-            // 1. Create User
+            // 1. Create User with default password
+            String defaultPassword = "Nigus@123";
             String userSql = "INSERT INTO users (username, password_hash, role, status) VALUES (?, ?, 'client', 'active')";
             PreparedStatement userStmt = conn.prepareStatement(userSql, Statement.RETURN_GENERATED_KEYS);
             userStmt.setString(1, username);
-            userStmt.setString(2, password); // In real app, hash this!
+            userStmt.setString(2, defaultPassword); // Default password for all new clients
             userStmt.executeUpdate();
 
             ResultSet userKeys = userStmt.getGeneratedKeys();

@@ -35,7 +35,8 @@
             <Button maxWidth="Infinity" onAction="#handleSimulateMonthEnd" styleClass="nav-button" text="Run Month-End (Interest)" />
             
             <VBox alignment="BOTTOM_CENTER" VBox.vgrow="ALWAYS">
-               <Button maxWidth="Infinity" onAction="#handleLogout" styleClass="logout-button" text="Secure Logout">
+               <Button maxWidth="Infinity" onAction="#handleLogout" styleClass="logout-button" text="Log Out">
+                   <padding><Insets bottom="15.0" top="15.0" /></padding>
                   <VBox.margin><Insets bottom="20.0" left="20.0" right="20.0" /></VBox.margin>
                </Button>
             </VBox>
@@ -56,7 +57,7 @@
                   </VBox>
                   <VBox styleClass="card" HBox.hgrow="ALWAYS">
                      <Label text="TOTAL LIQUIDITY" textFill="#7f8c8d"><font><Font size="12.0" /></font></Label>
-                     <Label fx:id="totalBalanceLabel" text="\$ 0.00" textFill="#27ae60"><font><Font name="System Bold" size="32.0" /></font></Label>
+                     <Label fx:id="totalBalanceLabel" text="ETB 0.00" textFill="#27ae60"><font><Font name="System Bold" size="32.0" /></font></Label>
                   </VBox>
                   <VBox styleClass="card" HBox.hgrow="ALWAYS">
                      <Label text="ACTIVE ACCOUNTS" textFill="#7f8c8d"><font><Font size="12.0" /></font></Label>
@@ -65,12 +66,6 @@
                </children>
             </HBox>
             
-            <!-- Warning Banner -->
-            <HBox alignment="CENTER_LEFT" style="-fx-background-color: #fff3cd; -fx-border-color: #ffeeba; -fx-padding: 15; -fx-background-radius: 5;">
-               <Label fx:id="reserveWarningLabel" text="System Status: Healthy" textFill="#856404">
-                  <font><Font name="System Bold" size="14.0" /></font>
-               </Label>
-            </HBox>
 
             <Label text="Quick Actions" textFill="#2c3e50"><font><Font name="System Bold" size="18.0" /></font></Label>
             <Label text="Select an option from the sidebar to manage the banking system." textFill="#7f8c8d" />

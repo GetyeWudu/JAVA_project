@@ -51,7 +51,7 @@ public class AdminCustomerListController {
                 row.add(rs.getString("email"));
                 row.add(rs.getString("phone_number"));
                 row.add(rs.getString("account_number"));
-                row.add(String.format("$ %.2f", rs.getDouble("balance")));
+                row.add(String.format("ETB %.2f", rs.getDouble("balance")));
                 row.add(rs.getString("status"));
                 data.add(row);
             }
@@ -135,7 +135,7 @@ public class AdminCustomerListController {
         }
 
         int userId = Integer.parseInt(selected.get(0));
-        String defaultPass = "Bank@123";
+        String defaultPass = "Nigus@123";
 
         try (Connection conn = DBConnection.getConnection();
              // FIXED QUERY: using password_hash

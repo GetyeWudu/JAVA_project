@@ -15,4 +15,17 @@
         <Button maxWidth="Infinity" onAction="#handleUpdate" styleClass="action-button" text="Save Changes" />
         <Label fx:id="statusLabel" style="-fx-text-fill: red;" />
     </VBox>
+    
+    <VBox maxWidth="450" spacing="15" styleClass="card">
+        <Label styleClass="header-label" text="Change Password" />
+        <Separator />
+        <Label text="Current Password" />
+        <PasswordField fx:id="currentPasswordField" />
+        <Label text="New Password" />
+        <PasswordField fx:id="newPasswordField" />
+        <Label text="Confirm New Password" />
+        <PasswordField fx:id="confirmPasswordField" />
+        <Button maxWidth="Infinity" onAction="#handleChangePassword" styleClass="action-button" text="Change Password" />
+        <Label fx:id="passwordStatusLabel" style="-fx-text-fill: red;" />
+    </VBox>
 </VBox>
