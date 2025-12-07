@@ -103,11 +103,15 @@
     -fx-text-fill: white;
 }
 
+/* Logout button with consistent size across admin and client dashboards */
 .logout-button {
     -fx-background-color: #c0392b; 
     -fx-text-fill: white; 
     -fx-cursor: hand;
     -fx-background-radius: 5;
+    -fx-padding: 15 20;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
 }
 .logout-button:hover {
     -fx-background-color: #e74c3c;
