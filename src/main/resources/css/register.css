@@ -1,0 +1,78 @@
+.register-root {
+    -fx-background-color: linear-gradient(to bottom right, #eef2f7, #d6e1f0);
+}
+
+.register-scroll {
+    -fx-background-color: transparent;
+}
+
+.main-container {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.2, 0, 2);
+    -fx-spacing: 15;
+}
+
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2b3a67;
+}
+
+.form-grid {
+    -fx-padding: 10;
+}
+
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
+
+.form-text-field,
+.form-password-field,
+.form-choice-box,
+.form-date-picker {
+    -fx-pref-width: 260;
+    -fx-background-radius: 6;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 6;
+    -fx-padding: 6 10;
+    -fx-font-size: 13px;
+}
+
+.form-text-field:focused,
+.form-password-field:focused,
+.form-choice-box:focused,
+.form-date-picker:focused {
+    -fx-border-color: #4a90e2;
+    -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.2), 6, 0.3, 0, 1);
+}
+
+.register-button {
+    -fx-background-color: linear-gradient(to right, #4a90e2, #3b6db1);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 25;
+    -fx-cursor: hand;
+}
+
+.register-button:hover {
+    -fx-background-color: linear-gradient(to right, #5aa1f0, #4a90e2);
+}
+
+.login-link {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4a90e2;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+.status-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #d9534f;
+    -fx-font-weight: bold;
+}

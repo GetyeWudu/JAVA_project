@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mycompany.bankms.RegisterController"
+            stylesheets="@../../../css/register.css"
+            styleClass="register-root">
+
+    <!-- ScrollPane makes the form scrollable if content is taller than window -->
+    <ScrollPane fitToWidth="true" fitToHeight="true"
+                AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
+                AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0"
+                styleClass="register-scroll">
+
+        <VBox fx:id="mainContainer" spacing="20"
+              alignment="TOP_CENTER"
+              prefWidth="600"
+              styleClass="main-container">
+
+            <Label text="Customer Registration" styleClass="title-label"/>
+
+            <GridPane fx:id="formGrid" hgap="15" vgap="12" styleClass="form-grid">
+
+                <Label text="First Name:" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="firstNameField" promptText="Enter first name"
+                           styleClass="form-text-field" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Last Name:" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="lastNameField" promptText="Enter last name"
+                           styleClass="form-text-field" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Email:" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="emailField" promptText="Enter email"
+                           styleClass="form-text-field" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Phone:" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="phoneField" promptText="Enter phone number"
+                           styleClass="form-text-field" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Address:" styleClass="form-label" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="addressField" promptText="Enter address"
+                           styleClass="form-text-field" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label text="National ID:" styleClass="form-label" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <TextField fx:id="nationalIdField" promptText="Enter national ID"
+                           styleClass="form-text-field" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <Label text="Date of Birth:" styleClass="form-label" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="dobPicker" styleClass="form-date-picker"
+                            GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                <Label text="Username:" styleClass="form-label" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                <TextField fx:id="usernameField" promptText="Choose a username"
+                           styleClass="form-text-field" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                <Label text="Password:" styleClass="form-label" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                <PasswordField fx:id="passwordField" promptText="Enter password"
+                               styleClass="form-password-field" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+                <Label text="Confirm Password:" styleClass="form-label" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+                <PasswordField fx:id="confirmPasswordField" promptText="Re-enter password"
+                               styleClass="form-password-field" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+                <Label text="Initial Deposit:" styleClass="form-label" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+                <TextField fx:id="initialDepositField" promptText="Enter initial deposit"
+                           styleClass="form-text-field" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+                <Label text="Account Type:" styleClass="form-label" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+                <ChoiceBox fx:id="accountTypeChoice" styleClass="form-choice-box"
+                           GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <Button fx:id="registerButton" text="Register" onAction="#handleRegister"
+                    styleClass="register-button"/>
+
+            <Label fx:id="statusLabel" styleClass="status-label" textFill="red"/>
+
+            <Hyperlink text="Already have an account? Login here"
+                       fx:id="loginLink" onAction="#goToLogin"
+                       styleClass="login-link"/>
+
+        </VBox>
+    </ScrollPane>
+</AnchorPane>

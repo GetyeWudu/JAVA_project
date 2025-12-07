@@ -1,0 +1,147 @@
+/* Main Background */
+.root {
+    -fx-background-color: #f4f7f6;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card Containers */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+    -fx-padding: 30;
+}
+
+/* Headings */
+.header-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.sub-header {
+    -fx-font-size: 16px;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* Input Fields */
+.text-field, .text-area {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: transparent;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-background-color: white;
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+/* Buttons */
+.action-button {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+    -fx-font-size: 14px;
+}
+
+.action-button:hover {
+    -fx-background-color: #3498db;
+}
+
+.cancel-button {
+    -fx-background-color: white;
+    -fx-border-color: #e74c3c;
+    -fx-text-fill: #e74c3c;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-padding: 9 19;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+/* Tables */
+.table-view {
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 5 5 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:filled:hover {
+    -fx-background-color: #e8f6f3;
+}
+
+/* Sidebar Buttons */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #bdc3c7;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 15 30;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+}
+
+.logout-button {
+    -fx-background-color: #c0392b; 
+    -fx-text-fill: white; 
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+.logout-button:hover {
+    -fx-background-color: #e74c3c;
+}
+/* NIGUS BANK THEME */
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header Labels */
+.header-label {
+    -fx-text-fill: #0c2461; /* Royal Navy */
+}
+
+/* Cards */
+.card {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+    -fx-background-radius: 8;
+}
+
+/* Action Buttons */
+.action-button {
+    -fx-background-color: #f1c40f; /* Royal Gold */
+    -fx-text-fill: #0c2461;     /* Navy Text */
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.action-button:hover {
+    -fx-background-color: #f39c12;
+}
+
+/* Navigation */
+.nav-button:hover {
+    -fx-background-color: #f1c40f; /* Gold Highlight */
+    -fx-text-fill: #0c2461;
+}

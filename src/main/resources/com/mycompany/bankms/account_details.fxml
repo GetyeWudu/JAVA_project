@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="30.0" styleClass="root" stylesheets="@../../../css/client.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bankms.AccountDetailsController">
+   <children>
+      <VBox maxWidth="500.0" spacing="20.0" styleClass="card" style="-fx-background-color: linear-gradient(to right, #2c3e50, #3498db); -fx-padding: 30;">
+         <children>
+            <Label text="BankMS Debit Card" textFill="WHITE">
+               <font><Font size="14.0" /></font>
+            </Label>
+            <Label fx:id="accNumLabel" text="**** **** **** ****" textFill="WHITE">
+               <font><Font name="System Bold" size="28.0" /></font>
+            </Label>
+            <HBox spacing="50.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Current Balance" textFill="#bdc3c7" />
+                        <Label fx:id="balanceLabel" text="\$ 0.00" textFill="WHITE">
+                           <font><Font name="System Bold" size="22.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Status" textFill="#bdc3c7" />
+                        <Label fx:id="statusLabel" text="Active" textFill="#2ecc71">
+                           <font><Font name="System Bold" size="22.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label text="Select an option from the sidebar to begin." textFill="#7f8c8d" />
+   </children>
+</VBox>

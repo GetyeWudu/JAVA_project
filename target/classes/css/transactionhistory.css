@@ -1,0 +1,67 @@
+/* === Root Layout === */
+.transaction-root {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 30;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* === Title Label === */
+.transaction-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2f3640;
+    -fx-underline: true;
+}
+
+/* === Table Styling === */
+.transaction-table {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dcdde1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 3);
+}
+
+/* Column header style */
+.transaction-table .column-header-background {
+    -fx-background-color: #40739e;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.transaction-table .column-header,
+.transaction-table .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Table rows */
+.transaction-table .table-row-cell {
+    -fx-border-color: transparent transparent #ecf0f1 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 8;
+    -fx-font-size: 13px;
+}
+
+.transaction-table .table-row-cell:filled:hover {
+    -fx-background-color: #dcdde1;
+}
+
+.transaction-table .table-row-cell:filled:selected {
+    -fx-background-color: #273c75;
+    -fx-text-fill: white;
+}
+
+/* Scrollbar Styling */
+.transaction-table .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.transaction-table .increment-button,
+.transaction-table .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.transaction-table .thumb {
+    -fx-background-color: #718093;
+    -fx-background-radius: 5;
+}

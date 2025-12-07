@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bankms.AdminClientsController">
+   <content>
+      <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: #ecf0f1; -fx-padding: 40;">
+         <children>
+            <Label text="Create New Client Account" textFill="#2c3e50">
+               <font><Font name="System Bold" size="24.0" /></font>
+            </Label>
+            <VBox spacing="10.0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+               <children>
+                  <Label text="Personal Information" textFill="#3498db"><font><Font name="System Bold" size="14.0" /></font></Label>
+                  <GridPane hgap="15.0" vgap="15.0">
+                     <children>
+                        <TextField fx:id="firstNameField" promptText="First Name" />
+                        <TextField fx:id="lastNameField" promptText="Last Name" GridPane.columnIndex="1" />
+                        <TextField fx:id="emailField" promptText="Email Address" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                        <TextField fx:id="phoneField" promptText="Phone Number" GridPane.rowIndex="2" />
+                        <TextArea fx:id="addressArea" prefHeight="60.0" promptText="Residential Address" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                     </children>
+                     <columnConstraints><ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" /><ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" /></columnConstraints>
+                     <rowConstraints><RowConstraints /><RowConstraints /><RowConstraints /><RowConstraints /></rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+            <VBox spacing="10.0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+               <children>
+                  <Label text="Login Credentials" textFill="#3498db"><font><Font name="System Bold" size="14.0" /></font></Label>
+                  <GridPane hgap="15.0" vgap="15.0">
+                     <children>
+                        <TextField fx:id="usernameField" promptText="Username" />
+                        <PasswordField fx:id="passwordField" promptText="Temporary Password" GridPane.columnIndex="1" />
+                     </children>
+                     <columnConstraints><ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" /><ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" /></columnConstraints>
+                     <rowConstraints><RowConstraints /></rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+            <VBox spacing="10.0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+               <children>
+                  <Label text="Account Setup" textFill="#3498db"><font><Font name="System Bold" size="14.0" /></font></Label>
+                  <GridPane hgap="15.0" vgap="15.0">
+                     <children>
+                        <ComboBox fx:id="accountTypeBox" maxWidth="Infinity" promptText="Select Account Type" GridPane.columnIndex="0" />
+                        <TextField fx:id="initialDepositField" promptText="Initial Deposit Amount ($)" GridPane.columnIndex="1" />
+                     </children>
+                     <columnConstraints><ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" /><ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" /></columnConstraints>
+                     <rowConstraints><RowConstraints /></rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#handleCancel" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-color: #7f8c8d; -fx-text-fill: #7f8c8d;" text="Cancel" />
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#handleCreateClient" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="Create Account" />
+               </children>
+            </HBox>
+            <Label fx:id="statusLabel" textFill="#e74c3c"><font><Font name="System Bold" size="12.0" /></font></Label>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>
