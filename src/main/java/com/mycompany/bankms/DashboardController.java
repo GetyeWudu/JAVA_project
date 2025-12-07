@@ -42,7 +42,7 @@ public class DashboardController {
             ResultSet rs2 = stmt2.executeQuery();
             if (rs2.next()) {
                 totalDeposits = rs2.getDouble(1);
-                totalBalanceLabel.setText(String.format("$ %.2f", totalDeposits));
+                totalBalanceLabel.setText(String.format("%.2f ETB", totalDeposits));
             }
 
             String sqlActive = "SELECT COUNT(*) FROM users WHERE status = 'active' AND role = 'client'";

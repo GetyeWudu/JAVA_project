@@ -51,7 +51,7 @@ public class AdminCustomerListController {
                 row.add(rs.getString("email"));
                 row.add(rs.getString("phone_number"));
                 row.add(rs.getString("account_number"));
-                row.add(String.format("$ %.2f", rs.getDouble("balance")));
+                row.add(String.format("%.2f ETB", rs.getDouble("balance")));
                 row.add(rs.getString("status"));
                 data.add(row);
             }

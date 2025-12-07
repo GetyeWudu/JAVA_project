@@ -57,7 +57,7 @@
                   <GridPane hgap="15.0" vgap="15.0">
                      <children>
                         <ComboBox fx:id="accountTypeBox" maxWidth="Infinity" promptText="Select Account Type" GridPane.columnIndex="0" />
-                        <TextField fx:id="initialDepositField" promptText="Initial Deposit Amount ($)" GridPane.columnIndex="1" />
+                        <TextField fx:id="initialDepositField" promptText="Initial Deposit Amount (ETB)" GridPane.columnIndex="1" />
                      </children>
                      <columnConstraints><ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" /><ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" /></columnConstraints>
                      <rowConstraints><RowConstraints /></rowConstraints>
