@@ -21,7 +21,7 @@ public class LoginController {
 
         try (Connection conn = DBConnection.getConnection()) {
             // Use password_hash based on your DB
-            String checkSql = "SELECT user_id, password_hash, role, status FROM users WHERE username = ?";
+            String checkSql = "SELECT user_id, password_hash, role, status, mustChangePassword FROM users WHERE username = ?";
             PreparedStatement checkStmt = conn.prepareStatement(checkSql);
             checkStmt.setString(1, username);
             ResultSet rs = checkStmt.executeQuery();
@@ -31,6 +31,7 @@ public class LoginController {
                 String dbPass = rs.getString("password_hash");
                 String role = rs.getString("role");
                 String status = rs.getString("status");
+                boolean mustChange = rs.getBoolean("mustChangePassword");
 
                 if ("inactive".equalsIgnoreCase(status) || "frozen".equalsIgnoreCase(status)) {
                     messageLabel.setText("Account Locked. Contact Admin.");
@@ -38,8 +39,16 @@ public class LoginController {
                 }
 
                 if (password.equals(dbPass)) {
-                    if (role.equals("admin")) loadAdminDashboard(userId, username);
-                    else loadClientDashboard(userId, username);
+                    if (role.equals("admin")) {
+                        loadAdminDashboard(userId, username);
+                    } else {
+                        // Check if client must change password
+                        if (mustChange) {
+                            loadPasswordChangePage(userId, username);
+                        } else {
+                            loadClientDashboard(userId, username);
+                        }
+                    }
                 } else {
                     messageLabel.setText("Invalid Credentials.");
                 }
@@ -50,6 +59,27 @@ public class LoginController {
             e.printStackTrace();
             messageLabel.setText("Database Connection Error");
         }
+    }
+    
+    private void loadPasswordChangePage(int userId, String username) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/bankms/update_profile.fxml"));
+        Parent root = loader.load();
+        
+        UpdateProfileController controller = loader.getController();
+        controller.setUserSession(userId);
+        
+        Stage stage = (Stage) usernameField.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setMaximized(true);
+        
+        // Show alert to inform user
+        javafx.application.Platform.runLater(() -> {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Password Change Required");
+            alert.setHeaderText("You must change your password");
+            alert.setContentText("Please scroll down to the 'Change Password' section and set a new password before accessing your account.");
+            alert.showAndWait();
+        });
     }
 
     private void loadAdminDashboard(int adminId, String username) throws Exception {

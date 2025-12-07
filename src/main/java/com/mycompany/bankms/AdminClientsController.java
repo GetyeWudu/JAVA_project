@@ -84,11 +84,11 @@ public class AdminClientsController {
                 throw new SQLException("Duplicate username: " + user);
             }
 
-            // 2. Create User
-            String sqlUser = "INSERT INTO users (username, password_hash, role, status) VALUES (?, ?, 'client', 'active')";
+            // 2. Create User with default password "Nigus@123"
+            String sqlUser = "INSERT INTO users (username, password_hash, role, status, mustChangePassword) VALUES (?, ?, 'client', 'active', TRUE)";
             PreparedStatement stmtUser = conn.prepareStatement(sqlUser, Statement.RETURN_GENERATED_KEYS);
             stmtUser.setString(1, user);
-            stmtUser.setString(2, pass); 
+            stmtUser.setString(2, "Nigus@123"); // Default password
             stmtUser.executeUpdate();
 
             ResultSet rs = stmtUser.getGeneratedKeys();

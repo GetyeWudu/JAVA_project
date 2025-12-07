@@ -125,7 +125,7 @@ public class AdminCustomerListController {
         } catch (Exception e) { e.printStackTrace(); }
     }
     
-    // --- FIXED: Uses 'password_hash' ---
+    // --- Password reset to default "Nigus@123" with audit logging ---
     @FXML
     private void handleResetPassword() {
         ObservableList<String> selected = clientTable.getSelectionModel().getSelectedItem();
@@ -135,19 +135,33 @@ public class AdminCustomerListController {
         }
 
         int userId = Integer.parseInt(selected.get(0));
-        String defaultPass = "Bank@123";
+        String defaultPass = "Nigus@123";
 
-        try (Connection conn = DBConnection.getConnection();
-             // FIXED QUERY: using password_hash
-             PreparedStatement stmt = conn.prepareStatement("UPDATE users SET password_hash = ? WHERE user_id = ?")) {
+        try (Connection conn = DBConnection.getConnection()) {
+            conn.setAutoCommit(false);
             
+            // Update password and set mustChangePassword flag
+            PreparedStatement stmt = conn.prepareStatement(
+                "UPDATE users SET password_hash = ?, mustChangePassword = TRUE WHERE user_id = ?"
+            );
             stmt.setString(1, defaultPass);
             stmt.setInt(2, userId);
             stmt.executeUpdate();
             
+            // Create audit log entry
+            String auditSql = "INSERT INTO transactions (account_id, transaction_type, amount, description, date) " +
+                            "SELECT a.account_id, 'Admin Action', 0, CONCAT('Password reset by admin for user_id: ', ?), NOW() " +
+                            "FROM accounts a JOIN customers c ON a.customer_id = c.customer_id WHERE c.user_id = ? LIMIT 1";
+            PreparedStatement auditStmt = conn.prepareStatement(auditSql);
+            auditStmt.setInt(1, userId);
+            auditStmt.setInt(2, userId);
+            auditStmt.executeUpdate();
+            
+            conn.commit();
+            
             if(statusMsgLabel != null) {
                 statusMsgLabel.setStyle("-fx-text-fill: green;");
-                statusMsgLabel.setText("Password reset to: " + defaultPass);
+                statusMsgLabel.setText("Password reset to: " + defaultPass + " (must change on next login)");
             }
         } catch (SQLException e) { 
             e.printStackTrace(); 
