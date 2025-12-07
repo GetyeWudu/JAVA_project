@@ -30,7 +30,7 @@ public class DepositController {
             accountNumberLabel.setText(accountNumber);
         }
         if (balanceLabel != null) {
-            balanceLabel.setText(String.format("$ %.2f", currentBalance));
+            balanceLabel.setText(String.format("%.2f ETB", currentBalance));
         }
     }
 

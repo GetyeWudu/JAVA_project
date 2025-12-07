@@ -53,7 +53,7 @@ public class AdminTransactionsController {
                 String type = rs.getString("transaction_type");
                 row.add(type != null ? type : "General");
                 
-                row.add(String.format("$ %.2f", rs.getDouble("amount")));
+                row.add(String.format("%.2f ETB", rs.getDouble("amount")));
                 
                 // Fetching from the 'date' column now
                 row.add(String.valueOf(rs.getTimestamp("date")));

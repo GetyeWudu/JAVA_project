@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #f4f6f8;" stylesheets="@../../../css/client.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bankms.DashboardController">
+<BorderPane minHeight="700.0" minWidth="1200.0" style="-fx-background-color: #f4f6f8;" stylesheets="@../../../css/client.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bankms.DashboardController">
    
    <!-- LEFT SIDEBAR -->
    <left>
@@ -56,7 +56,7 @@
                   </VBox>
                   <VBox styleClass="card" HBox.hgrow="ALWAYS">
                      <Label text="TOTAL LIQUIDITY" textFill="#7f8c8d"><font><Font size="12.0" /></font></Label>
-                     <Label fx:id="totalBalanceLabel" text="\$ 0.00" textFill="#27ae60"><font><Font name="System Bold" size="32.0" /></font></Label>
+                     <Label fx:id="totalBalanceLabel" text="0.00 ETB" textFill="#27ae60"><font><Font name="System Bold" size="32.0" /></font></Label>
                   </VBox>
                   <VBox styleClass="card" HBox.hgrow="ALWAYS">
                      <Label text="ACTIVE ACCOUNTS" textFill="#7f8c8d"><font><Font size="12.0" /></font></Label>
@@ -64,14 +64,6 @@
                   </VBox>
                </children>
             </HBox>
-            
-            <!-- Warning Banner -->
-            <HBox alignment="CENTER_LEFT" style="-fx-background-color: #fff3cd; -fx-border-color: #ffeeba; -fx-padding: 15; -fx-background-radius: 5;">
-               <Label fx:id="reserveWarningLabel" text="System Status: Healthy" textFill="#856404">
-                  <font><Font name="System Bold" size="14.0" /></font>
-               </Label>
-            </HBox>
-
             <Label text="Quick Actions" textFill="#2c3e50"><font><Font name="System Bold" size="18.0" /></font></Label>
             <Label text="Select an option from the sidebar to manage the banking system." textFill="#7f8c8d" />
          </children>

@@ -30,7 +30,7 @@
             </Label>
             
             <Label text="Current Balance:" textFill="#7f8c8d" />
-            <Label fx:id="balanceLabel" text="\$ 0.00" textFill="#27ae60">
+            <Label fx:id="balanceLabel" text="0.00 ETB" textFill="#27ae60">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -38,7 +38,7 @@
             
             <Separator prefWidth="200.0" />
             
-            <Label text="Amount to Deposit ($)" />
+            <Label text="Amount to Deposit (ETB)" />
             <TextField fx:id="amountField" promptText="e.g. 100.00" styleClass="text-field" />
             
             <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#handleDeposit" styleClass="action-button" style="-fx-background-color: #27ae60;" text="Confirm Deposit" />

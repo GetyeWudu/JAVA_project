@@ -16,7 +16,6 @@ public class DashboardController {
     @FXML private Label totalClientsLabel;
     @FXML private Label totalBalanceLabel;
     @FXML private Label activeAccountsLabel;
-    @FXML private Label reserveWarningLabel;
 
     private int adminId;
     private String adminUsername;
@@ -42,25 +41,13 @@ public class DashboardController {
             ResultSet rs2 = stmt2.executeQuery();
             if (rs2.next()) {
                 totalDeposits = rs2.getDouble(1);
-                totalBalanceLabel.setText(String.format("$ %.2f", totalDeposits));
+                totalBalanceLabel.setText(String.format("%.2f ETB", totalDeposits));
             }
 
             String sqlActive = "SELECT COUNT(*) FROM users WHERE status = 'active' AND role = 'client'";
             PreparedStatement stmt3 = conn.prepareStatement(sqlActive);
             ResultSet rs3 = stmt3.executeQuery();
             if (rs3.next()) activeAccountsLabel.setText(String.valueOf(rs3.getInt(1)));
-
-            // Reserve Simulation
-            double simulatedCashOnHand = 50000.00; 
-            if (reserveWarningLabel != null) {
-                if (totalDeposits * 0.10 > simulatedCashOnHand) {
-                    reserveWarningLabel.setText("WARNING: Low Reserves! Liquidity Risk.");
-                    reserveWarningLabel.setStyle("-fx-text-fill: #e74c3c; -fx-font-weight: bold;");
-                } else {
-                    reserveWarningLabel.setText("System Status: Healthy");
-                    reserveWarningLabel.setStyle("-fx-text-fill: #27ae60; -fx-font-weight: bold;");
-                }
-            }
 
         } catch (SQLException e) {
             e.printStackTrace();
