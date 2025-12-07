@@ -26,7 +26,7 @@
             
             <VBox spacing="5.0">
                <children>
-                  <Label text="Loan Amount ($)" textFill="#2c3e50">
+                  <Label text="Loan Amount (ETB)" textFill="#2c3e50">
                      <font><Font name="System Bold" size="12.0" /></font>
                   </Label>
                   <TextField fx:id="amountField" promptText="e.g. 5000.00" styleClass="text-field" />

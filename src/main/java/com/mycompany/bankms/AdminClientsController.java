@@ -18,7 +18,6 @@ public class AdminClientsController {
     @FXML private TextArea addressArea;
     
     @FXML private TextField usernameField;
-    @FXML private PasswordField passwordField;
     
     @FXML private ComboBox<String> accountTypeBox;
     @FXML private TextField initialDepositField;
@@ -48,12 +47,12 @@ public class AdminClientsController {
         String email = emailField.getText().trim();
         String address = addressArea.getText().trim();
         String user = usernameField.getText().trim();
-        String pass = passwordField.getText().trim();
+        String pass = "Nigus@123"; // Default password for new clients
         String type = accountTypeBox.getValue();
         String depositStr = initialDepositField.getText().trim();
         String phone = phoneField.getText().trim();
 
-        if (fName.isEmpty() || lName.isEmpty() || user.isEmpty() || pass.isEmpty()) {
+        if (fName.isEmpty() || lName.isEmpty() || user.isEmpty()) {
             statusLabel.setStyle("-fx-text-fill: red;");
             statusLabel.setText("Please fill all required fields.");
             return;
@@ -180,7 +179,6 @@ public class AdminClientsController {
         phoneField.clear();
         addressArea.clear();
         usernameField.clear();
-        passwordField.clear();
         initialDepositField.clear();
     }
 }

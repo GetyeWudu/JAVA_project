@@ -31,7 +31,7 @@
             
             <VBox alignment="BOTTOM_CENTER" VBox.vgrow="ALWAYS">
                <children>
-                  <Button maxWidth="Infinity" onAction="#handleLogout" styleClass="logout-button" text="Logout">
+                  <Button maxWidth="Infinity" onAction="#handleLogout" styleClass="logout-button" text="Log Out">
                      <padding><Insets bottom="15.0" top="15.0" /></padding>
                   </Button>
                </children>

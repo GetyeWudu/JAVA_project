@@ -21,7 +21,7 @@
                   <VBox>
                      <children>
                         <Label text="Current Balance" textFill="#bdc3c7" />
-                        <Label fx:id="balanceLabel" text="\$ 0.00" textFill="WHITE">
+                        <Label fx:id="balanceLabel" text="ETB 0.00" textFill="WHITE">
                            <font><Font name="System Bold" size="22.0" /></font>
                         </Label>
                      </children>

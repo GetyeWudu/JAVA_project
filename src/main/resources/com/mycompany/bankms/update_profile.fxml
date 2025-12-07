@@ -14,5 +14,10 @@
         <TextArea fx:id="addressField" prefHeight="80" wrapText="true" />
         <Button maxWidth="Infinity" onAction="#handleUpdate" styleClass="action-button" text="Save Changes" />
         <Label fx:id="statusLabel" style="-fx-text-fill: red;" />
+        
+        <Separator />
+        
+        <Label styleClass="header-label" text="Change Password" />
+        <Button maxWidth="Infinity" onAction="#handleChangePassword" styleClass="action-button" text="Change Password" />
     </VBox>
 </VBox>

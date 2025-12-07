@@ -25,7 +25,7 @@
             </Label>
             
             <Label text="Available Balance:" textFill="#7f8c8d" />
-            <Label fx:id="balanceLabel" text="\$ 0.00" textFill="#27ae60">
+            <Label fx:id="balanceLabel" text="ETB 0.00" textFill="#27ae60">
                <font><Font name="System Bold" size="24.0" /></font>
             </Label>
             
@@ -34,7 +34,7 @@
             <Label text="Recipient Account Number" />
             <TextField fx:id="recipientField" promptText="e.g. 98765432" styleClass="text-field" />
             
-            <Label text="Amount ($)" />
+            <Label text="Amount (ETB)" />
             <TextField fx:id="amountField" promptText="e.g. 100.00" styleClass="text-field" />
             
             <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#handleTransfer" styleClass="action-button" text="Send Money" />

@@ -13,7 +13,7 @@ public class AccountDetailsController {
     public void setSession(int userId, String username, int accountId, String accountNumber, double balance) {
         Platform.runLater(() -> {
             if (accNumLabel != null) accNumLabel.setText(accountNumber != null ? accountNumber : "----");
-            if (balanceLabel != null) balanceLabel.setText(String.format("$ %.2f", balance));
+            if (balanceLabel != null) balanceLabel.setText(String.format("ETB %.2f", balance));
             if (statusLabel != null) statusLabel.setText("Active");
             if (userLabel != null) userLabel.setText(username);
         });

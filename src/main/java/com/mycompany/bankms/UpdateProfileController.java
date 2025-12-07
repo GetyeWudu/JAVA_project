@@ -52,4 +52,24 @@ public class UpdateProfileController {
             statusLabel.setText("Error: " + e.getMessage());
         }
     }
+    
+    @FXML
+    private void handleChangePassword() {
+        try {
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/com/mycompany/bankms/change_password.fxml"));
+            javafx.scene.Parent root = loader.load();
+            
+            ChangePasswordController controller = loader.getController();
+            controller.setUserSession(userId);
+            
+            javafx.stage.Stage stage = new javafx.stage.Stage();
+            stage.setTitle("Change Password");
+            stage.setScene(new javafx.scene.Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            statusLabel.setStyle("-fx-text-fill: red;");
+            statusLabel.setText("Error opening change password dialog: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 }

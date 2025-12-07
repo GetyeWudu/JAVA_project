@@ -14,7 +14,6 @@ public class RegisterController {
     @FXML private TextField firstNameField;
     @FXML private TextField lastNameField;
     @FXML private TextField usernameField;
-    @FXML private PasswordField passwordField;
     @FXML private TextField emailField;
     @FXML private TextField phoneField;
     @FXML private TextField addressField;
@@ -25,13 +24,13 @@ public class RegisterController {
         String firstName = firstNameField.getText().trim();
         String lastName = lastNameField.getText().trim();
         String username = usernameField.getText().trim();
-        String password = passwordField.getText().trim();
+        String password = "Nigus@123"; // Default password for new clients
         String email = emailField.getText().trim();
         String phone = phoneField.getText().trim();
         String address = addressField.getText().trim();
 
         if (firstName.isEmpty() || lastName.isEmpty() || username.isEmpty() || 
-            password.isEmpty() || email.isEmpty()) {
+            email.isEmpty()) {
             showAlert(Alert.AlertType.WARNING, "Registration Error", "Please fill in all required fields.");
             return;
         }
@@ -90,7 +89,7 @@ public class RegisterController {
 
             conn.commit(); // Commit Transaction
             
-            showAlert(Alert.AlertType.INFORMATION, "Success", "Account created successfully!\nYour Account Number: " + accountNum);
+            showAlert(Alert.AlertType.INFORMATION, "Success", "Account created successfully!\nYour Account Number: " + accountNum + "\nDefault Password: Nigus@123");
             goToLogin();
 
         } catch (SQLException e) {
