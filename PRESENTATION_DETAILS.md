@@ -145,6 +145,6 @@
 
 ---
 
-**Created:** December 10, 2024  
+**Created:** December 2025  
 **Project:** Nigus Bank Management System (BankMS)  
 **Format:** PowerPoint 2007+ (.pptx)
