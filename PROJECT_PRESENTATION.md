@@ -105,9 +105,21 @@ Traditional banking systems are often complex and time-consuming. This project a
 
 ### Key Dependencies
 ```xml
-- org.openjfx:javafx-controls:13
-- org.openjfx:javafx-fxml:13
-- com.mysql:mysql-connector-j:8.0.33
+<dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-controls</artifactId>
+    <version>13</version>
+</dependency>
+<dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-fxml</artifactId>
+    <version>13</version>
+</dependency>
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>8.0.33</version>
+</dependency>
 ```
 
 ---

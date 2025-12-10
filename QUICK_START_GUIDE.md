@@ -44,7 +44,8 @@ Download from: https://pandoc.org/installing.html
 
 **Step 2: Convert to PowerPoint**
 ```bash
-cd /home/runner/work/JAVA_project/JAVA_project
+# Navigate to your project directory
+cd your-project-directory
 
 # Convert the PowerPoint-ready version
 pandoc BANK_MANAGEMENT_PRESENTATION.md -o Nigus_Bank_Presentation.pptx
